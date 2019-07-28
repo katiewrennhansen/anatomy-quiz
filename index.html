@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Health Score</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css">
+    <link rel="stylesheet" type="text/css" href="main.css">
+</head>
+<body>
+    <header>
+        <h1>Health Score</h1>
+        <nav>
+            <p id="question-count">Question:<span></span></p>
+            <p id="correct-count">Correct:<span></span></p>
+        </nav>       
+    </header>
+  
+    <main>
+        <section class="landing-content">
+            <h2 class="landing-heading">How Healthy Are You?</h2>
+            <p class="landing-subheading">Learn more about whether or not your habits meet health standards.</p>
+            <button class="landing-button" type="submit">Take the Quiz!</button>
+        </section>
+
+        <section class="question-content">
+            <form class="question-form"> 
+                <legend>Question:<span class="question-text"></span></legend>
+                <label>
+                    <input type="radio" name="question" value="Answer A">Answer A
+                </label>
+                <label>
+                    <input type="radio" name="question" value="Answer B">Answer B
+                </label>
+                <label>
+                    <input type="radio" name="question" value="Answer C">Answer C
+                </label>
+                <label>
+                    <input type="radio" name="question" value="Answer D">Answer D
+                 </label>
+                <button class="submit-content-button"type="submit">Submit</button>
+            </form>
+        </section>
+
+        <section class="answer-content">
+            <h3 class="answer-status">Correct/Incorrect</h3>
+            <p class="answer-summary">Answer Summary</p>
+        </section>
+
+        <section class="score-content">
+            <h2 class="score-title">Your Score: <span class="score-value"></span></h2>
+            <h3 class="score-text"><span class="health-score"></span> Healthy</h3>
+            <button class="retake-button" type="submit">Retake Quiz!</button>
+        </section>
+
+    </main>
+
+
+
+    <script
+        src="https://code.jquery.com/jquery-3.4.1.min.js"
+        integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+        crossorigin="anonymous"></script>
+    <script type="text/javascript" href="index.js"></script>
+</body>
+</html>
