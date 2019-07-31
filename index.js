@@ -3,34 +3,70 @@
 //QUESTION DATA
 const QUESTIONS = [
     {
-        question:'How many minutes of physical activity to you get per week?',
+        question:'How many bones are in the human body?',
         answers: [ 
-            'less that 30 minutes of moderate exercise or 15 minutes of vigorous exercise', 
-            'between 30 - 60 minutes of moderate exercise or between 15 - 30 minutes of vigorous exercise', 
-            'between 6 - 150 minutes of moderate exercise or 30 - 75 minutes of vigorous exercise',
-            'more than 150 minutes of moderate exercise or 75 minutes of vigorous exercise',
+            '500', 
+            '206', 
+            '107',
+            '308',
             ],
-        correctAnswer: 'more than 150 minutes of moderate exercise or 75 minutes of vigorous exercise'
+        correctAnswer: '206',
+        explanation: 'The lumbar vertebrae have the largest bodies because they are responsible for supporting the majority of your body\'s weight'
     },
     {
-        question:'How many day per week do you participte in strength training?',
+        question:'What is the primary function of muscles?',
         answers: [
-            'I never strength train', 
-            'Once every few weeks', 
-            '1', 
-            '2+' 
+            'Movement', 
+            'Heat Production', 
+            'Stability', 
+            'All of the above' 
             ],
-        correctAnswer: '2+'
+        correctAnswer: 'All of the above',
+        explanation: 'The lumbar vertebrae have the largest bodies because they are responsible for supporting the majority of your body\'s weight'
     },
     {
-        question:'How many cups of water do you drink per day?',
+        question:'What part of the brain is responsible for providing feedback on the position of the body in order to coordinate movement?',
         answers: [
-            'none', 
-            '1-3', 
-            '3-5', 
-            '5-8' 
+            'Cerebrum', 
+            'Midbrain', 
+            'Cerebellum', 
+            'The Limbic System' 
             ],
-        correctAnswer: '5-8'
+        correctAnswer: 'Cerebellum',
+        explanation: 'The lumbar vertebrae have the largest bodies because they are responsible for supporting the majority of your body\'s weight'
+    },
+    {
+        question:'Which vertebrae have the largest vertebral bodies?',
+        answers: [
+            'Cervical', 
+            'Thoracic', 
+            'Lumbar', 
+            'Sacral' 
+            ],
+        correctAnswer: 'Lumbar',
+        explanation: 'The lumbar vertebrae have the largest bodies because they are responsible for supporting the majority of your body\'s weight'
+    },
+    {
+        question:'Which muscle/s is/are responsible for closing the jaw?',
+        answers: [
+            'masseter and temporalis', 
+            'pterygoids', 
+            'trapezius and sternocleidomastoid', 
+            'deltiods' 
+            ],
+        correctAnswer: 'masseter and temporalis',
+        explanation: 'The lumbar vertebrae have the largest bodies because they are responsible for supporting the majority of your body\'s weight'
+    },
+    {
+        question:'Which direction do arteries carry blood?',
+        answers: [
+            'toward the heart', 
+            'away from the bones', 
+            'away from the heart', 
+            'to the brain only' 
+            ],
+        correctAnswer: 'away from the heart',
+        explanation: 'The lumbar vertebrae have the largest bodies because they are responsible for supporting the majority of your body\'s weight'
     }
  
 ]
@@ -43,7 +79,7 @@ let questionCount = 0;
 
 //HOME PAGE 
 function startQuiz(){
-    $('button.landing-button').on('click', function(event){
+    $('main').on('click', 'button.landing-button', function(event){
         $(this).parent('section').addClass('hidden');
         $('.question-content').addClass('show');
         $('.question-count').text(1);
@@ -69,7 +105,7 @@ function generateQuestionElement(){
         return `
         <div>
         <form class="question-form"> 
-        <h2>Question: <span class="question-text">${QUESTIONS[questionCount].question}</span></h2>
+        <h2><span class="question-text">${QUESTIONS[questionCount].question}</span></h2>
         <fieldset>
         <label>
             <input type="radio" value="${QUESTIONS[questionCount].answers[0]}" name="question" value="Answer A" required">${QUESTIONS[questionCount].answers[0]}
@@ -88,10 +124,7 @@ function generateQuestionElement(){
         </form>
         </div>`;
     } else {
-        //render results
         renderResults();
-        //start new quiz
-        retakeQuiz();
         $('.question-count').text(10);
     }
 }
@@ -101,8 +134,6 @@ function renderForm(){
     $('.question-content').html(generateQuestionElement());  
     selectAnswer();
 }
-
-
 
 
 
@@ -126,23 +157,18 @@ function selectAnswer(){
 //DISPLAY CORRECT/INCORRECT PAGE
 
 //correct
-// - render correct html page
-// - next button takes you to the next questions (make sure question is not do over)
 function ifAnswerIsCorrect(){
-    $('.question-content').html(`<div><p>Correct!</p><button class="next-button">Next</button></div>`);
+    $('.question-content').html(`<div class="quiz-feedback"><h3>Correct!</h3><button class="next-button">Next</button></div>`);
 }
 
 //incorrect
-// - render advice page, content from the QUESTIONS array, for each incorrect answer
-// - next button takes you to the next questions (make sure question is not do over)
 function ifAnswerIsIncorrect(){
-    $('.question-content').html(`<div><p>Incorrect</p><button class="next-button">Next</button></div>`);
+    $('.question-content').html(`<div class="quiz-feedback"><h3>Incorrect.</h3><p>The correct answer is ${QUESTIONS[questionCount].correctAnswer}.</p><p id="explanation">${QUESTIONS[questionCount].explanation}</p><button class="next-button">Next</button></div>`);
 }
 
 
 
 //NEW QUESTION
-
 function renderNewForm(){
     $('main').on('click', '.next-button', function(event){
         changeQuestionCount();
@@ -156,12 +182,12 @@ function renderNewForm(){
 
 //display results on homepage along with 'health score'
 function renderResults(){
-    if (userScore > 7){
-        $('.question-content').html(`<div><p>Great job!</p><button class="retake-quiz">Retake Quiz</button></div>`)
-    } else if (userScore <= 7 && userScore >= 4){
-        $('.question-content').html(`<div><p>You did okay...</p><button class="retake-quiz">Retake Quiz</button></div>`)
+    if (userScore > 4){
+        $('.question-content').html(`<div class="quiz-feedback"><h3>You got ${userScore}/10 correct</h3><p>Great job!</p><button class="retake-quiz">Retake Quiz</button></div>`)
+    } else if (userScore <= 4 && userScore >= 2){
+        $('.question-content').html(`<div class="quiz-feedback"><h3>You got ${userScore}/10 correct</h3><p>You did okay...</p><button class="retake-quiz">Retake Quiz</button></div>`)
     } else {
-        $('.question-content').html(`<div><p>You probably need some help.</p><button class="retake-quiz">Retake Quiz</button></div>`)
+        $('.question-content').html(`<div class="quiz-feedback"><h3>You got ${userScore}/10 correct</h3><p>You probably need some help.</p><button class="retake-quiz">Retake Quiz</button></div>`)
     }
 }
 
@@ -173,14 +199,12 @@ function retakeQuiz(){
 }
 
 
-
-
 //CALL ALL FUNCTIONS
 function callAllFunctions(){
     startQuiz();
     renderForm();
     renderNewForm();
+    retakeQuiz();
 }
 
-
-callAllFunctions();
+$(callAllFunctions);
