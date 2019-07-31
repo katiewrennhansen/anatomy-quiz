@@ -31,7 +31,7 @@ main {
 
 section {
     text-align: center;
-    margin: 120px auto 0 auto;
+    margin: 50px auto 0 auto;
     padding: 40px 30px;
     width: 60%;
     border-radius: 2px;
@@ -67,6 +67,11 @@ h3 {
 
 .question-content, .answer-content {
     background-color: rgb(171, 171, 171);
+    display: none;
+}
+
+.answer-content, .score-content {
+    display: none;
 }
 
 legend {
@@ -99,3 +104,11 @@ input[type="radio"]{
     border: none;
     font-size: 15px;
 } 
+
+.hidden {
+    display: none;
+}
+
+.show {
+    display: block;
+}
