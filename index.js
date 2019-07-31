@@ -3,15 +3,15 @@
 //QUESTION DATA
 const QUESTIONS = [
     {
-        question:'How many bones are in the human body?',
+        question:'How many bones are in the adult human body?',
         answers: [ 
             '500', 
             '206', 
             '107',
-            '308',
+            '300',
             ],
         correctAnswer: '206',
-        explanation: 'The lumbar vertebrae have the largest bodies because they are responsible for supporting the majority of your body\'s weight'
+        explanation: 'There are 206 bones in the adult human body. I newborn bady will have 300, but many fuse during development.'
     },
     {
         question:'What is the primary function of muscles?',
@@ -22,7 +22,7 @@ const QUESTIONS = [
             'All of the above' 
             ],
         correctAnswer: 'All of the above',
-        explanation: 'The lumbar vertebrae have the largest bodies because they are responsible for supporting the majority of your body\'s weight'
+        explanation: 'The muscular system carries out all of these functions. Each one is vital to survival.'
     },
     {
         question:'What part of the brain is responsible for providing feedback on the position of the body in order to coordinate movement?',
@@ -33,7 +33,7 @@ const QUESTIONS = [
             'The Limbic System' 
             ],
         correctAnswer: 'Cerebellum',
-        explanation: 'The lumbar vertebrae have the largest bodies because they are responsible for supporting the majority of your body\'s weight'
+        explanation: 'The Cerebellum compares indended movement patterns with actual movement patterns in order to carry out better future patterns. It is responsible to awareness of where your body is in space.'
     },
     {
         question:'Which vertebrae have the largest vertebral bodies?',
@@ -55,7 +55,7 @@ const QUESTIONS = [
             'deltiods' 
             ],
         correctAnswer: 'masseter and temporalis',
-        explanation: 'The lumbar vertebrae have the largest bodies because they are responsible for supporting the majority of your body\'s weight'
+        explanation: 'These two muscles are the primary elevators of the mandible. The pterygoids are responsible for lateral jaw translation while the others aid in neck, back and shoulder movement.'
     },
     {
         question:'Which direction do arteries carry blood?',
@@ -66,7 +66,7 @@ const QUESTIONS = [
             'to the brain only' 
             ],
         correctAnswer: 'away from the heart',
-        explanation: 'The lumbar vertebrae have the largest bodies because they are responsible for supporting the majority of your body\'s weight'
+        explanation: 'Arteries are responsible for carrying blood away from the heart while veins are responsible for carrying blood to the heart.'
     }
  
 ]
@@ -107,17 +107,17 @@ function generateQuestionElement(){
         <form class="question-form"> 
         <h2><span class="question-text">${QUESTIONS[questionCount].question}</span></h2>
         <fieldset>
-        <label>
-            <input type="radio" value="${QUESTIONS[questionCount].answers[0]}" name="question" value="Answer A" required">${QUESTIONS[questionCount].answers[0]}
+        <label class="option-choice">
+            <input type="radio" class="radio-button" value="${QUESTIONS[questionCount].answers[0]}" name="question" value="Answer A" required">${QUESTIONS[questionCount].answers[0]}
         </label>
-        <label>
-            <input type="radio" value="${QUESTIONS[questionCount].answers[1]}" name="question" value="Answer B" required>${QUESTIONS[questionCount].answers[1]}
+        <label class="option-choice">
+            <input type="radio" class="radio-button" value="${QUESTIONS[questionCount].answers[1]}" name="question" value="Answer B" required>${QUESTIONS[questionCount].answers[1]}
         </label>
-        <label>
-            <input type="radio" value="${QUESTIONS[questionCount].answers[2]}" name="question" value="Answer C" required>${QUESTIONS[questionCount].answers[2]}
+        <label class="option-choice">
+            <input type="radio" class="radio-button" value="${QUESTIONS[questionCount].answers[2]}" name="question" value="Answer C" required>${QUESTIONS[questionCount].answers[2]}
         </label>
-        <label>
-            <input type="radio" value="${QUESTIONS[questionCount].answers[3]}" name="question" value="Answer D" required>${QUESTIONS[questionCount].answers[3]}
+        <label class="option-choice">
+            <input type="radio" class="radio-button" value="${QUESTIONS[questionCount].answers[3]}" name="question" value="Answer D" required>${QUESTIONS[questionCount].answers[3]}
          </label>
         <button class="submit-content-button"type="submit">Submit</button>
         </fieldset>
@@ -208,3 +208,5 @@ function callAllFunctions(){
 }
 
 $(callAllFunctions);
+
+

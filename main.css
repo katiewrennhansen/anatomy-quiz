@@ -42,6 +42,7 @@ section {
     width: 70%;
     border-radius: 2px;
     background: rgb(171, 171, 171);
+    box-shadow: 4px 4px 6px black;
 }
 
 
@@ -67,10 +68,15 @@ button {
     border-radius: 5px;
     border: none;
     cursor: pointer;
-    box-shadow: 2px 2px 4px black;
+    box-shadow: 2px 2px 1px rgb(154, 124, 28);
     font-size: 20px;
     padding: 10px 15px;
     margin: 25px auto 0 auto;
+}
+
+button:hover {
+    transform: translate(0, 1px);
+    box-shadow: 2px 1px  rgb(154, 124, 28);
 }
 
 .landing-subheading {
@@ -98,6 +104,7 @@ label {
 label:hover {
     background: #D1AA27;
     cursor: pointer;
+    transition: 300ms ease-in-out 10ms;
 }
 
 input[type="radio"]{
@@ -105,7 +112,9 @@ input[type="radio"]{
 }
 
 .hidden {
-    display: none;
+    /* display: none; */
+    transform: translate(-5000000px);
+    position: absolute;
 }
 
 .show {
