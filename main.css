@@ -6,45 +6,63 @@ body {
     margin: 0;
     font-family: sans-serif;
     background: #01071D;
-
+    background: url('quizCover.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-attachment: fixed;
+    font-weight: 300;
 }
 
-img {
-    font-size: 40px;
+a {
     position: absolute;
-    top: 10px;
-    left: 10px;
-    width: 60px;
+    top: 34px;
+    left: 30px;
+    font-size: 18px;
+    text-decoration: none;
+    color: black;
+    border: 1px solid black;
+    border-radius: 5px;
+    padding: 10px 15px;
+}
+
+a:hover{
+    background: #AA744C;
+    color: white;
+    border: 1px solid #AA744C;
+    transition-duration: 300ms;
+}
+
+header {
+    margin-top: 18px;
+    text-align: right;
 }
 
 nav {
-    text-align: right;
-    padding-right: 50px;
+    padding-top: 10px;
 }
 
 nav p {
-    display: inline-block;
-    padding: 45px 30px;
-    font-size: 20px;
-    color: rgb(220, 220, 220);
+    padding: 10px 30px;
+    font-size: 18px;
+    color: rgb(0, 0, 0);
     font-weight: 300;
 }
 
 main {
-    padding: 80px;
+    padding-top: 5vh;
 }
-
 
 section {
     text-align: center;
     margin: 40px auto 0 auto;
     padding: 40px 30px;
     width: 70%;
-    border-radius: 2px;
-    background: rgb(171, 171, 171);
-    box-shadow: 4px 4px 6px black;
+    border-radius: 3px;
+    background: #2C1F17;
+    box-shadow: 2px 1px 3px rgb(15, 15, 15);
+    color: rgb(228, 238, 242);
 }
-
 
 h1 {
     font-size: 40px;
@@ -61,22 +79,21 @@ p {
     font-size: 18px;
 }
 
-
 button {
     color: white;
-    background: #D1AA27;
+    background: rgba(255, 255, 255, 0);
     border-radius: 5px;
-    border: none;
+    border: 1px solid white;
     cursor: pointer;
-    box-shadow: 2px 2px 1px rgb(154, 124, 28);
     font-size: 20px;
     padding: 10px 15px;
     margin: 25px auto 0 auto;
 }
 
 button:hover {
-    transform: translate(0, 1px);
-    box-shadow: 2px 1px  rgb(154, 124, 28);
+    transition-duration: 300ms;
+    background: #AA744C;
+    border: 1px solid #AA744C;
 }
 
 .landing-subheading {
@@ -84,25 +101,33 @@ button:hover {
 }
 
 .question-content {
-    background-color: rgb(171, 171, 171);
+    background: #2C1F17;
     display: none;
 }
 
+.option-choice {
+    color: #2C1F17;
+}
 
 label, button[type="submit"]{
     display: block;  
 }
 
+button[type="submit"] {
+    margin-top: 30px;
+    font-weight: 300;
+}
+
 label {
     padding: 10px;
-    background: white;
+    background: rgb(228, 238, 242);
     margin: 10px;
     text-align:left;
     border-radius: 2px;
 }
 
 label:hover {
-    background: #D1AA27;
+    background: #AA744C;
     cursor: pointer;
     transition: 300ms ease-in-out 10ms;
 }
@@ -112,7 +137,6 @@ input[type="radio"]{
 }
 
 .hidden {
-    /* display: none; */
     transform: translate(-5000000px);
     position: absolute;
 }
@@ -129,4 +153,67 @@ input[type="radio"]{
 #explanation {
     margin-top: 10px;
     font-size: 16px;
+}
+
+
+@media (min-width: 768px){
+    a {
+        font-size: 20px;
+        top: 56px;
+        left: 80px;
+    }
+    nav {
+        text-align: right;
+        padding-right: 50px;
+    }
+    nav p {
+        display: inline-block;
+        padding: 45px 30px;
+        font-size: 20px;
+    }
+    main {
+        padding: 100px;
+    }
+    section {
+        padding: 50px 30px;
+    }
+    h1 {
+        padding-bottom: 50px;
+    }
+    .landing-subheading {
+        padding-bottom: 20px;
+    }
+}
+@media (min-width: 1200px){
+    a {
+        font-size: 25px;
+    }
+    nav p {
+        font-size: 25px;
+    }
+    h1 {
+        font-size: 60px;
+    }
+    .landing-subheading {
+        font-size: 30px;
+    }
+    h2 {
+        font-size: 40px;
+    }
+    button[type="submit"]{
+        font-size: 25px;
+    }
+    label {
+        padding: 15px;
+        font-size: 20px
+    }
+    h3 {
+        font-size: 30px;
+    }
+    .question-content p {
+        font-size: 22px;
+    }
+    #explanation {
+        font-size: 20px;
+    }
 }
