@@ -6,7 +6,6 @@ let userScore = 0;
 let questionCount = 0;
 
 
-
 //HOME PAGE 
 function startQuiz(){
     $('main').on('click', 'button.landing-button', function(event){
@@ -112,9 +111,9 @@ function renderNewForm(){
 
 //display results on homepage along with 'health score'
 function renderResults(){
-    if (userScore > 4){
+    if (userScore > 7){
         $('.question-content').html(`<div class="quiz-feedback"><h3>You got ${userScore}/10 correct</h3><p>Great job!</p><button class="retake-quiz">Retake Quiz</button></div>`)
-    } else if (userScore <= 4 && userScore >= 2){
+    } else if (userScore <= 7 && userScore >= 4){
         $('.question-content').html(`<div class="quiz-feedback"><h3>You got ${userScore}/10 correct</h3><p>You did okay...</p><button class="retake-quiz">Retake Quiz</button></div>`)
     } else {
         $('.question-content').html(`<div class="quiz-feedback"><h3>You got ${userScore}/10 correct</h3><p>You probably need some help.</p><button class="retake-quiz">Retake Quiz</button></div>`)
