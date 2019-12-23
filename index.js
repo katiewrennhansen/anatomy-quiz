@@ -33,24 +33,24 @@ function generateQuestionElement(){
     if (questionCount < QUESTIONS.length){
         return `
         <div>
-        <form class="question-form"> 
-        <h2><span class="question-text">${QUESTIONS[questionCount].question}</span></h2>
-        <fieldset>
-        <label class="option-choice">
-            <input type="radio" class="radio-button" value="${QUESTIONS[questionCount].answers[0]}" name="question" value="Answer A" required">${QUESTIONS[questionCount].answers[0]}
-        </label>
-        <label class="option-choice">
-            <input type="radio" class="radio-button" value="${QUESTIONS[questionCount].answers[1]}" name="question" value="Answer B" required>${QUESTIONS[questionCount].answers[1]}
-        </label>
-        <label class="option-choice">
-            <input type="radio" class="radio-button" value="${QUESTIONS[questionCount].answers[2]}" name="question" value="Answer C" required>${QUESTIONS[questionCount].answers[2]}
-        </label>
-        <label class="option-choice">
-            <input type="radio" class="radio-button" value="${QUESTIONS[questionCount].answers[3]}" name="question" value="Answer D" required>${QUESTIONS[questionCount].answers[3]}
-         </label>
-        <button class="submit-content-button" type="submit">Submit</button>
-        </fieldset>
-        </form>
+            <form class="question-form"> 
+                <h2><span class="question-text">${QUESTIONS[questionCount].question}</span></h2>
+                <fieldset>
+                    <label class="option-choice">
+                        <input type="radio" class="radio-button" value="${QUESTIONS[questionCount].answers[0]}" name="question" value="Answer A" required">${QUESTIONS[questionCount].answers[0]}
+                    </label>
+                    <label class="option-choice">
+                        <input type="radio" class="radio-button" value="${QUESTIONS[questionCount].answers[1]}" name="question" value="Answer B" required>${QUESTIONS[questionCount].answers[1]}
+                    </label>
+                    <label class="option-choice">
+                        <input type="radio" class="radio-button" value="${QUESTIONS[questionCount].answers[2]}" name="question" value="Answer C" required>${QUESTIONS[questionCount].answers[2]}
+                    </label>
+                    <label class="option-choice">
+                        <input type="radio" class="radio-button" value="${QUESTIONS[questionCount].answers[3]}" name="question" value="Answer D" required>${QUESTIONS[questionCount].answers[3]}
+                    </label>
+                    <button class="submit-content-button" type="submit">Submit</button>
+                </fieldset>
+            </form>
         </div>`;
     } else {
         renderResults();
